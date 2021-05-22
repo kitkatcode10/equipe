@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+const Schema = mongoose.Schema; 
 
 var gearSchema = new mongoose.Schema({
   text: String
@@ -10,7 +11,7 @@ var userSchema = new mongoose.Schema({
   firstname: String,
   lastname: String, 
   email: String,
-  equipments: [gearSchema],
+  gear: [gearSchema],
   googleId: String
 }, {
   timestamps: true
