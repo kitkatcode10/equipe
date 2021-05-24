@@ -2,7 +2,12 @@ var mongoose = require('mongoose');
 const Schema = mongoose.Schema; 
 
 var gearSchema = new mongoose.Schema({
-  text: String
+  name: String,
+  modelMake: String, 
+  brand: String,
+  useType: String,
+  condition: String, 
+  forBorrow: Boolean, 
 }, {
   timestamps: true
 });

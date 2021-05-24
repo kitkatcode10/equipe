@@ -5,9 +5,8 @@ const passport = require('passport');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'equipe!', user: req.user }
-)}
-);
+  res.render('index', { title: 'equipe!'}); 
+});
 
 // Google OAuth login route
 router.get('/auth/google', passport.authenticate(
@@ -19,7 +18,7 @@ router.get('/auth/google', passport.authenticate(
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect : '/users/index',
+    successRedirect : '/gears', 
     failureRedirect : '/'
   }
 ));

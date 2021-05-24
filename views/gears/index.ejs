@@ -1,0 +1,41 @@
+<%- include('../partials/header') %>
+<h1> All my Gear</h1>
+
+<% if (user.gear.length) { %>
+
+<table> 
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Model & Make</th>
+            <th>Brand</th>
+            <th>Use Type</th>
+            <th>Condition</th>
+            <th>Up for Borrow?</th>
+        </tr>
+    </thead>
+</table>
+
+<tbody> 
+    <% user.gears.forEach(function(g){ %>
+    <tr> 
+        <td><%= g.name %> 
+        </td>
+        <td><%=g.modelMake %>
+        </td>
+        <td><%=g.useType %> 
+        </td>
+        <td><%=g.condition %> 
+        </td>
+        <td><%=g.forBorrow %> 
+        </td>
+    </tr> <% }); %>
+</tbody> 
+
+<% } else { %>
+    <h5> You haven't listed any gear yet! </h5>
+  <% } %> 
+
+  <a href="/gears/new">Add Gear</a>
+
+<%- include('../partials/footer') %>
