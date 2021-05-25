@@ -56,30 +56,6 @@ function deleteGear(req, res) {
     })
 }
 
-
-function index(req, res, next) {     
-    User.findById(req.user.id)
-        .then(function (user) {
-        console.log(user.gear)
-        return user.gear 
-        })
-    .then(function (gears) {
-        res.render('gears/index', {
-            gears, 
-            name: req.user.firstName,
-            title: "my gear line up"
-        })
-    })
-         .catch(function (err) {
-         return next(err)
-        });
-};
-
-
-
-function show(req. res)
-
-
     module.exports = {
     index, 
     create, 

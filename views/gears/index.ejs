@@ -40,4 +40,14 @@
     <a href="/gears/new">Add Gear</a>
 <% } %> 
 
+    <span class="title"><%- gear.text%></span>
+    <% if (gear._id.equals(user && user._id)) { %>
+        <form action="/gears/<%= gear._id %>?_method=DELETE" method="POST">
+        <button type="submit" >X</button>
+        </form>
+<% } %>
+
+
+    
+    
 <%- include('../partials/footer') %>
