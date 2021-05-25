@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@600&display=swap');
+
 body {
   box-sizing: border-box;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  color: #424748;
+  font-family: 'Syne', sans-serif;
+  color: black;
 }

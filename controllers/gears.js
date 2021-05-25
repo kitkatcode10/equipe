@@ -1,20 +1,23 @@
 const User = require('../models/user');
 
-function index(req, res, next) {    
+function index(req, res, next) {     
     User.findById(req.user.id)
         .then(function (user) {
-            res.render('gears/index', {
-                user, 
-                name: req.user.firstName,
-                title: "my gear line up"
-            })
+        return user.gears() 
         })
-        .catch(function (err) {
-            return next(err)
+    .then(function (gears) {
+        res.render('gears/index', {
+            gears, 
+            name: req.user.firstName,
+            title: "my gear line up"
+        })
+    })
+         .catch(function (err) {
+         return next(err)
         });
 };
 
-// fix this function so it shows the index of all the gear that's been submitted 
+// fix this function so it shows the index of all the gear that's been submitted attached to the user, gears schema 
 
 function newGear(req, res) {
     res.render('gears/new', {title: 'Add Gear'}); 
