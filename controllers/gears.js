@@ -18,8 +18,6 @@ function index(req, res, next) {
         });
 };
 
-// fix this function so it shows the index of all the gear that's been submitted attached to the user, gears schema 
-
 function newGear(req, res) {
     res.render('gears/new', {title: 'Add Gear'}); 
 };
