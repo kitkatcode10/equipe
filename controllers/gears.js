@@ -43,8 +43,14 @@ function create(req, res) {
         })
     }; 
 
+function delete(req, res) {
+    User.findById(req.user.id)
+
+dfaskdfja;slkdjf}
+
     module.exports = {
     index, 
     create, 
     new: newGear, 
+    delete,
  }
