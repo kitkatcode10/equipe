@@ -18,14 +18,11 @@ function index(req, res, next) {
         });
 };
 
-// fix this function so it shows the index of all the gear that's been submitted attached to the user, gears schema 
-
 function newGear(req, res) {
     res.render('gears/new', {title: 'Add Gear'}); 
 };
 
 function create(req, res) {
-
     User.findById(req.user.id)
         .then(function (user) {
             console.log(req.body); 
@@ -43,8 +40,49 @@ function create(req, res) {
         })
     }; 
 
+function deleteGear(req, res) {
+    User.findById(req.user.id)
+    .then(function (user) {
+    console.log(req.body);
+    user.gear.id(req.params.id).remove(); 
+    return user.save()
+    })
+    .then(function () {
+        res.redirect(`/gears`);
+    })
+    .catch(function (err) {
+        console.log("error", err);
+        res.redirect('/gears');
+    })
+}
+
+
+function index(req, res, next) {     
+    User.findById(req.user.id)
+        .then(function (user) {
+        console.log(user.gear)
+        return user.gear 
+        })
+    .then(function (gears) {
+        res.render('gears/index', {
+            gears, 
+            name: req.user.firstName,
+            title: "my gear line up"
+        })
+    })
+         .catch(function (err) {
+         return next(err)
+        });
+};
+
+
+
+function show(req. res)
+
+
     module.exports = {
     index, 
     create, 
     new: newGear, 
+    delete: deleteGear
  }
