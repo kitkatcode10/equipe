@@ -3,7 +3,8 @@ const User = require('../models/user');
 function index(req, res, next) {     
     User.findById(req.user.id)
         .then(function (user) {
-        return user.gears() 
+        console.log(user.gear)
+        return user.gear 
         })
     .then(function (gears) {
         res.render('gears/index', {
@@ -29,7 +30,8 @@ function create(req, res) {
         .then(function (user) {
             console.log(req.body); 
             req.body.forBorrow = !!req.body.forBorrow; 
-            console.log('after formatingborrow', req.body)
+            console.log('after formattingborrow', req.body)
+            user.gear.push(req.body);
             return user.save()
         })
         .then(function () {

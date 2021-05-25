@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 <h1> All my Gear</h1>
 
-<% if (user.gear.length) { %>
+<% if (gears.length > 0) { %>
 
 <table> 
     <thead>
@@ -17,7 +17,7 @@
 
 
 <tbody> 
-    <% user.gear.forEach(function(g){ %>
+    <% gears.forEach(function(g){ %>
     <tr> 
         <td><%= g.name %> 
         </td>
@@ -32,6 +32,8 @@
     </tr> <% }); %>
 </tbody>
 </table> 
+
+    <a href="gears/new"> Add More Gear</a> 
 
 <% } else { %>
     <h5> You haven't listed any gear yet! </h5>
