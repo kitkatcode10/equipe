@@ -1,22 +1,20 @@
 const User = require('../models/user');
 
-function index(req, res, next) {
-       // let modelQuery = req.query.name ? { name: new RegExp(req.query.name, 'i') } : {};
-    // let sortKey = req.query.sort || 'name';
+function index(req, res, next) {    
     User.findById(req.user.id)
-        // .sort(sortKey).exec
         .then(function (user) {
             res.render('gears/index', {
-                user,
-                // name: req.query.name,
-                // sortKey,
-                title: "my gear lineup"
+                user, 
+                name: req.user.firstName,
+                title: "my gear line up"
             })
         })
         .catch(function (err) {
             return next(err)
         });
 };
+
+// fix this function so it shows the index of all the gear that's been submitted 
 
 function newGear(req, res) {
     res.render('gears/new', {title: 'Add Gear'}); 
@@ -26,10 +24,9 @@ function create(req, res) {
 
     User.findById(req.user.id)
         .then(function (user) {
-            console.log(user.gears); 
+            console.log(req.body); 
             req.body.forBorrow = !!req.body.forBorrow; 
-            user.gears.push(req.body); 
-            console.log(user.gears)
+            console.log('after formatingborrow', req.body)
             return user.save()
         })
         .then(function () {

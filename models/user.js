@@ -13,8 +13,8 @@ var gearSchema = new mongoose.Schema({
 });
 
 var userSchema = new mongoose.Schema({
-  firstname: String,
-  lastname: String, 
+  firstName: String,
+  lastName: String, 
   email: String,
   gear: [gearSchema],
   googleId: String

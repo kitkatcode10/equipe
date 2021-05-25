@@ -8,7 +8,7 @@ function isLoggedIn(req, res, next) {
 }
 
 router.get('/gears', isLoggedIn, gearsCtrl.index);
-router.post('/gears', gearsCtrl.create); 
-router.get('/gears/new', isLoggedIn, gearsCtrl.new); 
-
+router.post('/gears', isLoggedIn, gearsCtrl.create); 
+router.get('/gears/new', isLoggedIn, gearsCtrl.new);
+ 
 module.exports = router;

@@ -14,28 +14,28 @@
             <th>Up for Borrow?</th>
         </tr>
     </thead>
-</table>
+
 
 <tbody> 
-    <% user.gears.forEach(function(g){ %>
+    <% user.gear.forEach(function(g){ %>
     <tr> 
         <td><%= g.name %> 
         </td>
-        <td><%=g.modelMake %>
+        <td><%= g.modelMake %>
         </td>
-        <td><%=g.useType %> 
+        <td><%= g.useType %> 
         </td>
-        <td><%=g.condition %> 
+        <td><%= g.condition %> 
         </td>
-        <td><%=g.forBorrow %> 
+        <td><%= g.forBorrow %> 
         </td>
     </tr> <% }); %>
-</tbody> 
+</tbody>
+</table> 
 
 <% } else { %>
     <h5> You haven't listed any gear yet! </h5>
-  <% } %> 
-
-  <a href="/gears/new">Add Gear</a>
+    <a href="/gears/new">Add Gear</a>
+<% } %> 
 
 <%- include('../partials/footer') %>
