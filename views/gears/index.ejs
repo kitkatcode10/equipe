@@ -32,9 +32,7 @@
         <td><%= g.forBorrow %> 
         </td>
         <td>             
-            <form action="/gears/:id" method="GET"> 
-                <button type="submit">Details</button>
-            </form>
+            <a href="/gears/<%= g._id %>">Details</a>
         </td> 
     </tr> <% }); %> 
 </tbody>
