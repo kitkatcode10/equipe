@@ -1,4 +1,19 @@
 <%- include('../partials/header') %>
 
+<section id="show-page"> 
+    <div>Name of Gear: </div>
+    <div> <%= user.gear.name %> </div>
+    <div>Model & Make: </div>
+    <div> <%= user.gear.modelMake %></div>
+    <div>Brand: </div>
+    <div> <%= user.gear.brand %></div>
+
+    <button type="submit"> Add/Edit Details
+    <button type="submit"> Maintenance Log 
+</section>
+
+
+
+<!-- okay here, we're going to add a button to bring back to the new form to edit the gear and embed maintenance log like movies'reviews' type in maintenace log info here -->
 
 <%- include('../partials/footer') %>

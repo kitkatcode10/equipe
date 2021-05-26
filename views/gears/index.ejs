@@ -23,13 +23,20 @@
         </td>
         <td><%= g.modelMake %>
         </td>
+        <td><%= g.brand %>
+        </td>
         <td><%= g.useType %> 
         </td>
         <td><%= g.condition %> 
         </td>
         <td><%= g.forBorrow %> 
         </td>
-    </tr> <% }); %>
+        <td>             
+            <form action="/gears/:id" method="GET"> 
+                <button type="submit">Details</button>
+            </form>
+        </td> 
+    </tr> <% }); %> 
 </tbody>
 </table> 
 
@@ -39,15 +46,5 @@
     <h5> You haven't listed any gear yet! </h5>
     <a href="/gears/new">Add Gear</a>
 <% } %> 
-
-    <span class="title"><%- gear.text%></span>
-    <% if (gear._id.equals(user && user._id)) { %>
-        <form action="/gears/<%= gear._id %>?_method=DELETE" method="POST">
-        <button type="submit" >X</button>
-        </form>
-<% } %>
-
-
-    
     
 <%- include('../partials/footer') %>

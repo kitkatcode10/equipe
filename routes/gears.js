@@ -11,5 +11,6 @@ router.get('/gears', isLoggedIn, gearsCtrl.index);
 router.post('/gears', isLoggedIn, gearsCtrl.create); 
 router.get('/gears/new', isLoggedIn, gearsCtrl.new);
 router.delete('/gears/:id', isLoggedIn, gearsCtrl.delete); 
+router.get('/gears/:id', isLoggedIn, gearsCtrl.show); 
  
 module.exports = router;

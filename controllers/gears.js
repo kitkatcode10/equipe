@@ -56,9 +56,25 @@ function deleteGear(req, res) {
     })
 }
 
+function show(req, res) {
+    User.findById(req.user.id)
+        .then(function (user) {
+            return user.gear.id(req.params.id)
+        })
+        .then(function (gear) {
+            console.log(gear);
+            res.render('gears/show', { title: 'Gear Details', gear });
+        })
+        .catch(function (err) {
+            res.redirect('/gears')
+        })
+};
+
+
     module.exports = {
     index, 
     create, 
     new: newGear, 
-    delete: deleteGear
+    delete: deleteGear,
+    show
  }
