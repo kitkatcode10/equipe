@@ -40,6 +40,7 @@ function create(req, res) {
         })
     }; 
 
+<<<<<<< HEAD
 function deleteGear(req, res) {
     User.findById(req.user.id)
     .then(function (user) {
@@ -70,11 +71,21 @@ function show(req, res) {
         })
 };
 
+=======
+function delete(req, res) {
+    User.findById(req.user.id)
+
+dfaskdfja;slkdjf}
+>>>>>>> main
 
     module.exports = {
     index, 
     create, 
     new: newGear, 
+<<<<<<< HEAD
     delete: deleteGear,
     show
+=======
+    delete,
+>>>>>>> main
  }
