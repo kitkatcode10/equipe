@@ -23,7 +23,6 @@ function newGear(req, res) {
 };
 
 function create(req, res) {
-
     User.findById(req.user.id)
         .then(function (user) {
             console.log(req.body); 
@@ -41,14 +40,52 @@ function create(req, res) {
         })
     }; 
 
+<<<<<<< HEAD
+function deleteGear(req, res) {
+    User.findById(req.user.id)
+    .then(function (user) {
+    console.log(req.body);
+    user.gear.id(req.params.id).remove(); 
+    return user.save()
+    })
+    .then(function () {
+        res.redirect(`/gears`);
+    })
+    .catch(function (err) {
+        console.log("error", err);
+        res.redirect('/gears');
+    })
+}
+
+function show(req, res) {
+    User.findById(req.user.id)
+        .then(function (user) {
+            return user.gear.id(req.params.id)
+        })
+        .then(function (gear) {
+            console.log(gear);
+            res.render('gears/show', { title: 'Gear Details', gear });
+        })
+        .catch(function (err) {
+            res.redirect('/gears')
+        })
+};
+
+=======
 function delete(req, res) {
     User.findById(req.user.id)
 
 dfaskdfja;slkdjf}
+>>>>>>> main
 
     module.exports = {
     index, 
     create, 
     new: newGear, 
+<<<<<<< HEAD
+    delete: deleteGear,
+    show
+=======
     delete,
+>>>>>>> main
  }

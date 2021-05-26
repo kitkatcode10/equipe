@@ -1,4 +1,27 @@
 <%- include('../partials/header') %>
 
+<section id="show-page"> 
+    <div>Name of Gear: </div>
+    <div> <%= user.gear.name %> </div>
+    <div>Model & Make: </div>
+    <div> <%= user.gear.modelMake %></div>
+    <div>Brand: </div>
+    <div> <%= user.gear.brand %></div>
+
+    <form id="edit-gear" action="/gears/<%= gear._id %>/edit" method="GET"> 
+    <button type="submit">Add/Edit Details</button> 
+    </form>
+    <button type="submit"> Maintenance Log </button>
+    <br> 
+  
+    <form id="delete-gear-form" action="/gears/<%= gear._id %>?_method=DELETE" method="POST">
+    <button type="submit"> Delete this Gear </button> 
+    </form>
+
+</section>
+<button><a href="/gears"> Back</a></button> 
+
+
+<!-- okay here, we're going to add a button to bring back to the new form to edit the gear and embed maintenance log like movies'reviews' type in maintenace log info here -->
 
 <%- include('../partials/footer') %>

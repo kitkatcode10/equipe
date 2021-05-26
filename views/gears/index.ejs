@@ -23,13 +23,18 @@
         </td>
         <td><%= g.modelMake %>
         </td>
+        <td><%= g.brand %>
+        </td>
         <td><%= g.useType %> 
         </td>
         <td><%= g.condition %> 
         </td>
         <td><%= g.forBorrow %> 
         </td>
-    </tr> <% }); %>
+        <td>             
+            <a href="/gears/<%= g._id %>">Details</a>
+        </td> 
+    </tr> <% }); %> 
 </tbody>
 </table> 
 
@@ -39,5 +44,5 @@
     <h5> You haven't listed any gear yet! </h5>
     <a href="/gears/new">Add Gear</a>
 <% } %> 
-
+    
 <%- include('../partials/footer') %>
