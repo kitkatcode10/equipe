@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@600&display=swap');
 
 body {
+  background-image: url("../images/backgroundequipe.jpg");
   box-sizing: border-box;
   font-family: 'Syne', sans-serif;
-  color: black;
+  color:white;
 }
