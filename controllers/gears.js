@@ -83,35 +83,28 @@ function editGear(req, res) {
 };
 
 
-function updateGear(req, res) {
-    User.findById(req.user.id)
-    .then(function (user) {
+// function updateGear(req, res) {
+//     User.findById(req.user.id)
+//     .then(function (user) {
     
-    return user.gear.id(req.params.id)
-    const updateData = req.body; 
-    User.findByIdAndUpdate(gearId, updateData)
-    return user.save
-})
+//     return user.gear.id(req.params.id)
+//     const updateData = req.body; 
+//     User.findByIdAndUpdate(gearId, updateData)
+//     return user.save
+// })
 
 
-    .then(function (gear) {
-        res.render('gears/show');
-    })
-    .catch(function (err) {
-        res.redirect('/gears')
-    })
-};
-
-then(function (user) {
-    console.log(req.body); 
-    req.body.forBorrow = !!req.body.forBorrow; 
-    console.log('after formattingborrow', req.body)
-    user.gear.push(req.body);
-    return user.save()
-// find the users gear to update
-// capture the new data coming in
-// modify and save at the same time 
-// handle the edit gear form ^ update the database and rediret to the showview 
+//     .then(function (gear) {
+//         res.render('gears/show');
+//     })
+//     .catch(function (err) {
+//         res.redirect('/gears')
+//     })
+// };
+// // find the users gear to update
+// // capture the new data coming in
+// // modify and save at the same time 
+// // handle the edit gear form ^ update the database and rediret to the showview 
 
     module.exports = {
     index, 
