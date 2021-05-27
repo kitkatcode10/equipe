@@ -1,26 +1,57 @@
 <%- include('../partials/header') %>
+<br>
+<br> 
+<div id="gear-title"><h2> <%=gear.name %></h2>
+ </div>
 
 <section id="show-page"> 
-    <div>Name of Gear: </div>
-    <div> <%= user.gear.name %> </div>
-    <div>Model & Make: </div>
-    <div> <%= user.gear.modelMake %></div>
-    <div>Brand: </div>
-    <div> <%= user.gear.brand %></div>
+    <div><strong>Name of Gear: </strong></div>
+    <div> <%= gear.name %> </div>
+    <div><strong>Model & Make: </strong></div>
+    <div> <%= gear.modelMake %></div>
+    <div><strong>Brand: </strong></div>
+    <div> <%= gear.brand %></div>
 
-    <form id="edit-gear" action="/gears/<%= gear._id %>/edit" method="GET"> 
-    <button type="submit">Add/Edit Details</button> 
-    </form>
-    <button type="submit"> Maintenance Log </button>
+    <section id="edit-gear" action="/gears/<%= gear._id %>/edit" method="GET"> 
+    <button type="submit">Edit Gear</button> 
+    </section>
     <br> 
   
-    <form id="delete-gear-form" action="/gears/<%= gear._id %>?_method=DELETE" method="POST">
+    <section id="delete-gear-form" action="/gears/<%= gear._id %>?_method=DELETE" method="POST">
     <button type="submit"> Delete this Gear </button> 
-    </form>
+    </section>
 
 </section>
 <button><a href="/gears"> Back</a></button> 
 
+
+
+<h2> Maintenance Log </h2>
+<form id="add-maintenance-activity-form" method="POST" action="/gears/<%= gear.id%>/maintenance">
+
+    <label><strong> Job Type</strong></label>
+    <select name="job-type">
+        <option value="Tune Up">Tune Up</option>
+        <option value="Part Replacement">Part Replacement</option>
+        <option value="Crash Repair">Crash Repair</option>
+        <option value="Other"> Other</option>
+    </select>
+    <br>
+    <label><strong>Severity</strong></label>
+    <select name="severity">
+    <option value="Minimal">Minimal</option>
+    <option value="Middle"> Middle </option>
+    <option value="Major"> Major </option>
+    </select>
+    <br>
+    <label><strong>Date</strong></label>
+    <input type="datetime-local" name="date-of-maintenance">
+    <br>
+    <label><strong>Details</strong></label>
+    <input type="text" name="maintenance-log-detail" placeholder="describe the job">
+    <br> 
+    <input type="submit" value="Add Job">
+</form>
 
 <!-- okay here, we're going to add a button to bring back to the new form to edit the gear and embed maintenance log like movies'reviews' type in maintenace log info here -->
 
