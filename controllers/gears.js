@@ -69,8 +69,31 @@ function show(req, res) {
         })
 };
 
-// function updateGear(req, res) {
-//     User.findByIdAndUpdate({'gears._id':req.params.id, updateData, {new: true}})
+function edit(req, res) {
+    User.findById(req.user.id)
+    .then(function (user) {
+    console.log('is this working')
+    return user.gear.id(req.params.id)
+    })
+    .then (function (gear) {
+    res.render('gears/:id/edit', {gear}); 
+    })
+    .catch(function (err) {
+        res.redirect('/gears')
+    })
+}; 
+
+
+
+
+//     User.findById(req.params.id, function(err, user) {
+//         if(!gear.user.equals(req.user._id)) return res.redirect('/gears');
+//         rers.render('gears/edit', {gear});
+//     });
+// }
+
+
+    //     User.findByIdAndUpdate({'gears._id':req.params.id, updateData, {new: true}})
 //     .then(function (gear) {
 //         return user.save()
 //     })
@@ -89,5 +112,5 @@ module.exports = {
     new: newGear, 
     delete: deleteGear,
     show, 
-    // update: updateGear, 
+    edit
  }

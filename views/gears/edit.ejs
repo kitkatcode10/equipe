@@ -1,0 +1,50 @@
+<%- include('../partials/header') %>
+
+
+<div id="gear-title"><h2>Edit <%=gear.name %></h2>
+</div>
+<div class="edit-gear-form"> 
+    <form action="/gears" method="GET">
+    <label>Name
+      <input type="text" name="name"> 
+    </label><br>
+    <label>Model and Make 
+      <input type="text" name="modelMake" required> 
+    </label><br>
+    <label>Brand
+      <input type="text" name="brand" required>
+    </label><br>
+    <label>Use Type
+      <select name="useType"> 
+        <option value="Casual/Leisure">Casual/Leisure</option>
+        <option value="Competitive">Competitive</option>
+        <option value="Holding it Hostage">Holding it Hostage</option>
+      </select>
+    </label><br>
+    <label>Condition 
+      <select name="condition">
+        <option value="Brand New">Brand New</option>
+        <option value="Used Once or Twice"> Used Once or Twice</option>
+        <option value="Gently Used"> Gently Used</option>
+        <option value="Used">Used</option>
+        <option value="Definitely Used"> Definitely Used</option>
+      </select>
+    </label><br> 
+    <label>Up for Borrow?
+      <input type="checkbox" name="forBorrow" checked>
+    </label><br> 
+      <input type="submit" value="Update Gear"> 
+    </form>
+  </div>
+
+    <button type="submit"> Maintenance Log </button>
+    <br> 
+  
+    <form id="delete-gear-form" action="/gears/<%= gear._id %>?_method=DELETE" method="POST">
+    <button type="submit"> Delete this Gear </button> 
+    </form>
+
+</section>
+<button><a href="/gears"> Back</a></button> 
+
+<%- include('../partials/footer') %>
