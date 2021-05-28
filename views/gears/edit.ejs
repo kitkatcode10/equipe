@@ -4,7 +4,7 @@
 <div id="gear-title"><h2>Edit <%=gear.name %></h2>
 </div>
 <div class="edit-gear-form"> 
-    <form action="/gears" method="GET">
+    <form action="/gears/<%= gear._id %>?_method=PUT" method="POST">
     <label>Name
       <input type="text" name="name"> 
     </label><br>

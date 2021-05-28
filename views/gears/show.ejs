@@ -12,9 +12,11 @@
     <div><strong>Brand: </strong></div>
     <div> <%= gear.brand %></div>
 
-    <section id="edit-gear" action="/gears/<%= gear._id %>/edit" method="GET"> 
+    <a href="/gears/<%= gear.id %>/edit">Edit Gear</a>
+
+    <!-- <section id="edit-gear" action="/gears/<%= gear._id %>/edit" method="GET"> 
     <button type="submit">Edit Gear</button> 
-    </section>
+    </section> -->
     <br> 
   
     <section id="delete-gear-form" action="/gears/<%= gear._id %>?_method=DELETE" method="POST">

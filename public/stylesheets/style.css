@@ -4,5 +4,6 @@ body {
   background-image: url("../images/backgroundequipe.jpg");
   box-sizing: border-box;
   font-family: 'Syne', sans-serif;
+  font-size: larger; 
   color:white;
 }

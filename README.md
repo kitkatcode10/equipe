@@ -1,32 +1,32 @@
-<h1> équipe </h1>
+# équipe 
 
-<h6> Do you like sports? Do you have a lot of equipment in your gear line up? Wouldn't it be nice if you knew what was in your gear line up, and in your friends? </h6>
- 
- <h5> Now you can! And then some! </h5>
+Do you like sports? Do you have a lot of equipment in your gear line up? Wouldn't it be nice if you knew what was in your gear line up, and in your friends? 
 
- <h6> With équipe, you can keep track of all your gear including it's model, condition, last use, maintenance jobs, and more. You'll also be able to see what other's have in their line up and ask to borrow their stuff! Because sharing is caring </h6>
+Now you can! And then some! 
+
+With équipe, you can keep track of all your gear including it's model, condition, last use, maintenance jobs, and more. You'll also be able to see what other's have in their line up and ask to borrow their stuff! Because sharing is caring 
 
  ---
 
-<h4> Screenshot </h4> 
+### Screenshot 
 
-![alt text](..\Users\Kat Wong\Documents\General Assembly\Projects\P2\equipe\public\images\equipe index page.JPG)
+![](<img src=public\images\equipe index page.JPG>)
 
 ---
 
-<h4> Technologies Used </h4> 
+### Technologies Used 
 
 <ul><li>Mongoose - MongoDB, MongoDB Atlas, Node.JS (and EJS), OAUTH, Google Cloud Platform, Heroku, and barely any CSS </li></ul>
 
 ---
 
-<h4> Getting Started </h4> 
+### Getting Started 
 
 C'mon click [here!](https://equipe-api.herokuapp.com/)
 
 ---
 
-<h4> Planning </h4>
+### Planning 
 
 1. [Trello Board (inclusive of User Stories)](https://trello.com/b/Cotj2koq/%C3%A9quipe) 
 2. [WireFrames via Figma](https://www.figma.com/file/IpAPHa44Qy2WGV6veZE3bo/SEI-Project-%232---Equipe-App-Wireframes?node-id=1%3A15)
@@ -34,7 +34,7 @@ C'mon click [here!](https://equipe-api.herokuapp.com/)
 
 ---
 
-<h4> Next Steps </h4>
+### Next Steps 
 
 <ul><li>
 I'd like to create another data model to borrow/request to borrow the gear (my train of thought is they are similar to reviews to a movie, and I'd like to share in request, when and what I'm borrowing the gear for)</li>

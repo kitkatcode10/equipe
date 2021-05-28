@@ -72,25 +72,15 @@ function show(req, res) {
 function edit(req, res) {
     User.findById(req.user.id)
     .then(function (user) {
-    console.log('is this working')
-    return user.gear.id(req.params.id)
+        return user.gear.id(req.params.id); 
     })
-    .then (function (gear) {
-    res.render('gears/:id/edit', {gear}); 
+    .then(function (gear) {
+        res.render('gear/edit', {title: 'Edit Gear', gear})
     })
     .catch(function (err) {
-        res.redirect('/gears')
+        res.redirect(`gears/${req.params.id}`)
     })
-}; 
-
-
-
-
-//     User.findById(req.params.id, function(err, user) {
-//         if(!gear.user.equals(req.user._id)) return res.redirect('/gears');
-//         rers.render('gears/edit', {gear});
-//     });
-// }
+} 
 
 
     //     User.findByIdAndUpdate({'gears._id':req.params.id, updateData, {new: true}})
