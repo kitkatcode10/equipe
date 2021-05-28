@@ -3,10 +3,11 @@ const Schema = mongoose.Schema;
 
 var gearSchema = new mongoose.Schema({
   name: String,
-  modelMake: String, 
+  modelMake: {type: String, required: true }, 
   brand: String,
   useType: String,
-  condition: String, 
+  condition: {type: String, required: true }, 
+  maintenance: [{type: Schema.Types.ObjectId, ref: 'Maintenance'}],
   forBorrow: Boolean, 
 }, {
   timestamps: true

@@ -13,6 +13,7 @@ require('dotenv').config();
 
 var indexRouter = require('./routes/index');
 var gearsRouter = require('./routes/gears');
+var maintenancesRouter = require('./routes/maintenances'); 
 
 var app = express();
 
@@ -48,6 +49,7 @@ app.use(function (req, res, next) {
 
 app.use('/', indexRouter);
 app.use('/', gearsRouter);
+app.use('/', maintenancesRouter); 
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

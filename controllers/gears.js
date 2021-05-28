@@ -69,51 +69,25 @@ function show(req, res) {
         })
 };
 
-function editGear(req, res) {
-        User.findById(req.user.id)
-        .then(function (user) {
-        return user.gear.id(req.params.id) 
-        })
-        .then(function (gear) {
-            res.render('gears/edit', { title: 'Update Gear', gear }); 
-        })
-        .catch(function (err) {
-            res.redirect('/gears')
-        })
-};
-
-
 // function updateGear(req, res) {
-//     const updateData = req.body; 
-//     // User.findById(req.user.id)
-//     // .then(function (user) {
-//     //     const gear = user.gear.id(req.params.id);
-//     // const updateData = req.body; 
-//     User.findByIdAndUpdate({'gears._id':req.params.id, updateData, { new: true }
-//         return user.save();
-//     })
-//     .then(function (user) {
-//         const gear = user.gear.id(req.params.id); 
-//         return gear;
+//     User.findByIdAndUpdate({'gears._id':req.params.id, updateData, {new: true}})
+//     .then(function (gear) {
+//         return user.save()
 //     })
 //     .then(function (gear) {
-//         res.redirect(`/gears/${req.params.id}`);
+//         console.log("updated the gear")
+//         res.render(`/gears/${req.params.id}`)
 //     })
 //     .catch(function (err) {
 //         res.redirect('/gears')
 //     })
-// };
-// // find the users gear to update
-// // capture the new data coming in
-// // modify and save at the same time 
-// // handle the edit gear form ^ update the database and rediret to the showview 
+// }; 
 
-    module.exports = {
+module.exports = {
     index, 
     create, 
     new: newGear, 
     delete: deleteGear,
     show, 
-    update: updateGear, 
-    edit: editGear 
+    // update: updateGear, 
  }

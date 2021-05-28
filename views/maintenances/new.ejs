@@ -1,0 +1,30 @@
+<%- include('../partials/header') %>
+
+<h2> Maintenance Log </h2>
+<p>Keep track of jobs -big or small- done on your gear here</p>
+<form id="add-maintenance-activity-form" method="POST" action="/gears/<%= gear.id%>/maintenance">
+    <label><strong> Job Type</strong></label>
+    <select name="job-type">
+        <option value="Tune Up">Tune Up</option>
+        <option value="Part Replacement">Part Replacement</option>
+        <option value="Crash Repair">Crash Repair</option>
+        <option value="Other"> Other</option>
+    </select>
+    <br>
+    <label><strong>Severity</strong></label>
+    <select name="severity">
+    <option value="Minimal">Minimal</option>
+    <option value="Middle"> Middle </option>
+    <option value="Major"> Major </option>
+    </select>
+    <br>
+    <label><strong>Date</strong></label>
+    <input type="datetime-local" name="date-of-maintenance">
+    <br>
+    <label><strong>Details</strong></label>
+    <input type="text" name="maintenance-log-detail" placeholder="describe the job">
+    <br> 
+    <input type="submit" value="Add Job">
+</form>
+
+<%- include('../partials/footer') %>
