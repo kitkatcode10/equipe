@@ -1,10 +1,8 @@
 <%- include('../partials/header') %>
-
-
-<div id="gear-title"><h2>Edit <%=gear.name %></h2>
-</div>
+<h2>Edit <%=gear.name %></h2>
+    
 <div class="edit-gear-form"> 
-    <form action="/gears/<%= gear._id %>?_method=PUT" method="POST">
+    <form action="/gears/<%= gear._id %>/edit" method="POST">
     <label>Name
       <input type="text" name="name"> 
     </label><br>
@@ -33,11 +31,10 @@
     <label>Up for Borrow?
       <input type="checkbox" name="forBorrow" checked>
     </label><br> 
-      <input type="submit" value="Update Gear"> 
+      <input type="submit" value="Save"> 
+    
     </form>
-  </div>
-
-    <button type="submit"> Maintenance Log </button>
+     <button type="submit"> Maintenance Log </button>
     <br> 
   
     <form id="delete-gear-form" action="/gears/<%= gear._id %>?_method=DELETE" method="POST">
@@ -46,5 +43,7 @@
 
 </section>
 <button><a href="/gears"> Back</a></button> 
+</div>
+</div>
 
 <%- include('../partials/footer') %>

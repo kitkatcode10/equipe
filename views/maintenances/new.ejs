@@ -2,7 +2,7 @@
 
 <h2> Maintenance Log </h2>
 <p>Keep track of jobs -big or small- done on your gear here</p>
-<form id="add-maintenance-activity-form" method="POST" action="/gears/<%= gear.id%>/maintenance">
+<form id="add-maintenance-activity-form" action="gears/<%= gear._id %>/maintenances" method="POST">
     <label><strong> Job Type</strong></label>
     <select name="job-type">
         <option value="Tune Up">Tune Up</option>
@@ -19,11 +19,13 @@
     </select>
     <br>
     <label><strong>Date</strong></label>
-    <input type="datetime-local" name="date-of-maintenance">
+    <input type="datetime-local" name="maintenance-job-date">
     <br>
     <label><strong>Details</strong></label>
-    <input type="text" name="maintenance-log-detail" placeholder="describe the job">
+    <input type="text" name="maintenance-jog-detail" placeholder="describe the job">
     <br> 
+    <label><strong>Cost</strong></label>
+    <input type="number" name="maintenance-log-cost" required pattern="/^\$?[0-9]+(\.[0-9][0-9])?$/">
     <input type="submit" value="Add Job">
 </form>
 

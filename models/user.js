@@ -7,7 +7,6 @@ var gearSchema = new mongoose.Schema({
   brand: String,
   useType: String,
   condition: {type: String, required: true }, 
-  maintenance: [{type: Schema.Types.ObjectId, ref: 'Maintenance'}],
   forBorrow: Boolean, 
 }, {
   timestamps: true

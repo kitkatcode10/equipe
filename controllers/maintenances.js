@@ -1,25 +1,29 @@
+const { SchemaType } = require('mongoose');
 const Maintenance = require('../models/maintenance');
 const User = require('../models/user'); 
 
 
-// function create(res, req) {
-//     Maintenance.create(req.body, function (err, performer) {
-//         res.redirect('/gears/show');
-//     });
-// }
-
-
 function newJob(req, res) {
-    User.find({}, function (err, maintenances) {
-        res.render('maintenances/new', { title: 'New Maintenance'
-        });
+    User.findById(req.params.id, function (err, user) {
+        res.render('maintenances/new', { gear });
+    });
+}
+
+function create(req, res) {
+    User.findById(req.params.id, function (err, user) {
+        req.body.gear = gear._id;
+        Maintenance.create(req.body, function (err, maintenance) {
+            Maintenance.find({ gear: gear._id }, function (err, maintenance) {
+                gear.save(function (err) {
+                    res.redirect(`/gears/${gear._id}`)
+                });
+            });
+        })
     });
 }
 
 
 module.exports = {
-//  index, 
-//  create, 
- new: newJob, 
-
+    create, 
+    new : newJob 
  }

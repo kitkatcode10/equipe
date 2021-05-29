@@ -10,13 +10,14 @@ With équipe, you can keep track of all your gear including it's model, conditio
 
 ### Screenshot 
 
-![](<img src=public\images\equipe index page.JPG>)
+![Indexpage Screenshot](./public/images/equipeindexpage.jpg)
+
 
 ---
 
 ### Technologies Used 
 
-<ul><li>Mongoose - MongoDB, MongoDB Atlas, Node.JS (and EJS), OAUTH, Google Cloud Platform, Heroku, and barely any CSS </li></ul>
+<ul><li>Mongoose - MongoDB, MongoDB Atlas, Node.JS (and EJS), OAUTH, Google Cloud Platform, Heroku, HTML, and barely any CSS </li></ul>
 
 ---
 

@@ -45,10 +45,10 @@ function deleteGear(req, res) {
         .then(function (user) {
         console.log(req.body);
         user.gear.id(req.params.id).remove(); 
-        return user.save()
+        return user.save();
     })
         .then(function () {
-        res.redirect(`/gears`);
+        res.redirect('/gears');
     })
         .catch(function (err) {
         console.log("error", err);
@@ -62,7 +62,7 @@ function show(req, res) {
         return user.gear.id(req.params.id)
         })
         .then(function (gear) {
-            res.render('gears/show', {title: 'Gear Details', gear});
+            res.render('gears/show', {title: 'Gear Details', gear, maintenance});
         })
         .catch(function (err) {
             res.redirect('/gears')
@@ -72,29 +72,16 @@ function show(req, res) {
 function edit(req, res) {
     User.findById(req.user.id)
     .then(function (user) {
-        return user.gear.id(req.params.id); 
+        return user.gear.id(req.params.id);
     })
     .then(function (gear) {
-        res.render('gear/edit', {title: 'Edit Gear', gear})
+        res.render('gears/edit', { title:'Edit Gear', gear })
     })
     .catch(function (err) {
-        res.redirect(`gears/${req.params.id}`)
+    res.redirect('/gears')
     })
-} 
+};
 
-
-    //     User.findByIdAndUpdate({'gears._id':req.params.id, updateData, {new: true}})
-//     .then(function (gear) {
-//         return user.save()
-//     })
-//     .then(function (gear) {
-//         console.log("updated the gear")
-//         res.render(`/gears/${req.params.id}`)
-//     })
-//     .catch(function (err) {
-//         res.redirect('/gears')
-//     })
-// }; 
 
 module.exports = {
     index, 
@@ -102,5 +89,5 @@ module.exports = {
     new: newGear, 
     delete: deleteGear,
     show, 
-    edit
+    edit,
  }

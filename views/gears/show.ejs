@@ -2,31 +2,70 @@
 <br>
 <br> 
 <div id="gear-title"><h2> <%=gear.name %></h2>
- </div>
 
 <section id="show-page"> 
+    <form action="/gears" method="POST">
     <div><strong>Name of Gear: </strong></div>
     <div> <%= gear.name %> </div>
     <div><strong>Model & Make: </strong></div>
     <div> <%= gear.modelMake %></div>
     <div><strong>Brand: </strong></div>
     <div> <%= gear.brand %></div>
+    </form>
 
-    <a href="/gears/<%= gear.id %>/edit">Edit Gear</a>
+    <form id="edit-gear-btn" action="/gears/<%= gear._id %>/edit" method="GET">
+        <button type="submit">Edit Gear</button>
+    </form>
 
-    <!-- <section id="edit-gear" action="/gears/<%= gear._id %>/edit" method="GET"> 
-    <button type="submit">Edit Gear</button> 
-    </section> -->
-    <br> 
+    <form id="delete-gear-form" action="/gears/<%= gear._id %>?_method=DELETE" method="POST">
+        <button type="submit"> Delete Gear </button> 
+    </form>
   
-    <section id="delete-gear-form" action="/gears/<%= gear._id %>?_method=DELETE" method="POST">
-    <button type="submit"> Delete this Gear </button> 
-    </section>
-
 </section>
-<button><a href="/gears"> Back</a></button> 
+<form action="/gears" method="GET">
+    <button type="submit">Back</button>
+    </form>
+
+<!-- <form id="add-maintenance-activity-form" method="POST" action="/maintenances/<%= gear.id%>/maintenances"><button type="submit"> Maintenance Jobs</button> -->
 
 
-<form id="add-maintenance-activity-form" method="POST" action="/gears/<%= gear.id%>/maintenances"><button type="submit">This Gear's Maintenance Jobs</button>
+    <br><h2> Maintenance Log </h2>
 
+    <% if (user.gear.length > 0 ) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>Job Type</th>
+          <th>Severity</th>
+          <th>Job Date</th>
+          <th>Details</th>
+          <th>Cost</th> 
+        </tr>
+      </thead>
+   
+    <tbody>
+      <% user.gear.forEach(function(m) { %>
+      <tr>
+        <td><%= m.jobType %></td>
+        <td><%= m.severity %></td>
+        <td><%= m.jobDate %></td>
+        <td><%= m.details %></td>
+        <td><%= m.cost %></td>
+      </tr>
+    
+<% }); %> 
+    </tbody>
+</table>
+<% } else { %>
+    <h5> Wow your gear is pristine! Or you haven't used it properly yet. </h5>
+  <% } %> 
+
+   
+    <form id="add-maintenance-job-btn" method="GET"
+    action="/gears/<%= gear._id %>/maintenances">
+    <button class="input-button"> Add Maintenance Job </button>
+    
+    </form>
+    
+</div>
 <%- include('../partials/footer') %>
