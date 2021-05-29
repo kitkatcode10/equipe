@@ -62,7 +62,7 @@ function show(req, res) {
         return user.gear.id(req.params.id)
         })
         .then(function (gear) {
-            res.render('gears/show', {title: 'Gear Details', gear, maintenance});
+            res.render('gears/show', {title: 'Gear Details', gear });
         })
         .catch(function (err) {
             res.redirect('/gears')
@@ -78,10 +78,22 @@ function edit(req, res) {
         res.render('gears/edit', { title:'Edit Gear', gear })
     })
     .catch(function (err) {
+    console.log(err)
     res.redirect('/gears')
     })
 };
 
+// function update(req, res) {
+//     User.findOne({'gear._id': req.params.id}, function (err, user) {
+//         const newInfo = req.body; 
+
+//         newInfo.text = req.body.text; 
+//         // User.update(req.params.id, req.body); ?? 
+//         gear.save(function(err) {
+//             res.redirect(`/gears/${gear._id}`)
+//         });
+//     });
+// }
 
 module.exports = {
     index, 
@@ -90,4 +102,5 @@ module.exports = {
     delete: deleteGear,
     show, 
     edit,
+    // update
  }

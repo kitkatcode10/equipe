@@ -9,6 +9,8 @@ function newJob(req, res) {
     });
 }
 
+
+
 function create(req, res) {
     User.findById(req.params.id, function (err, user) {
         req.body.gear = gear._id;

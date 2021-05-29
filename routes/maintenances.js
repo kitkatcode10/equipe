@@ -7,6 +7,8 @@ function isLoggedIn(req, res, next) {
     res.redirect('/auth/google');
 }
 
+router.get('/gears/:id/maintenances/new', isLoggedIn, maintenancesCtrl.new); 
 router.post('/gears/:id/maintenances', isLoggedIn, maintenancesCtrl.create);
-router.get('/gears/:id/maintenances', isLoggedIn, maintenancesCtrl.new); 
+
+
 module.exports = router;

@@ -4,7 +4,7 @@
 <div id="gear-title"><h2> <%=gear.name %></h2>
 
 <section id="show-page"> 
-    <form action="/gears" method="POST">
+   
     <div><strong>Name of Gear: </strong></div>
     <div> <%= gear.name %> </div>
     <div><strong>Model & Make: </strong></div>
@@ -25,9 +25,6 @@
 <form action="/gears" method="GET">
     <button type="submit">Back</button>
     </form>
-
-<!-- <form id="add-maintenance-activity-form" method="POST" action="/maintenances/<%= gear.id%>/maintenances"><button type="submit"> Maintenance Jobs</button> -->
-
 
     <br><h2> Maintenance Log </h2>
 
@@ -59,13 +56,12 @@
 <% } else { %>
     <h5> Wow your gear is pristine! Or you haven't used it properly yet. </h5>
   <% } %> 
-
-   
     <form id="add-maintenance-job-btn" method="GET"
-    action="/gears/<%= gear._id %>/maintenances">
-    <button class="input-button"> Add Maintenance Job </button>
-    
+    action="/gears/<%= gear._id %>/maintenances/new">
+    <button class="input-button"> Add Maintenance Job </button> 
     </form>
     
 </div>
+
 <%- include('../partials/footer') %>
+

@@ -2,7 +2,7 @@
 
 <h2> Maintenance Log </h2>
 <p>Keep track of jobs -big or small- done on your gear here</p>
-<form id="add-maintenance-activity-form" action="gears/<%= gear._id %>/maintenances" method="POST">
+<form id="add-maintenance-activity-form" action="/gears/<%= gear._id %>/maintenances/new" method="POST">
     <label><strong> Job Type</strong></label>
     <select name="job-type">
         <option value="Tune Up">Tune Up</option>
